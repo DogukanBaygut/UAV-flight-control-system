@@ -31,7 +31,7 @@
 - Frekans ayarları
 - Sinyal gücü kontrolü
 
-![Elektronik Harp Sayfası Görseli](images/Elektronik Harp.png)
+![Elektronik Harp Sayfası Görseli](images/Elektronik_Harp.png)
 ### Elektronik Harp
 - Sinyal analizi
 - Frekans tespiti
