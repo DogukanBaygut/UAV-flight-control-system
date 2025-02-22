@@ -95,6 +95,10 @@
 - Modüler sayfa yapısı
 - Özelleştirilebilir arayüz
 
+
+
+## Kurulum
+pip install -r requirements.txt
 ## Sorun Giderme
 
 ### Sık Karşılaşılan Hatalar
