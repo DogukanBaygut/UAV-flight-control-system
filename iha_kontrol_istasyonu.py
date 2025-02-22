@@ -6,7 +6,7 @@ from datetime import datetime
 from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QFormLayout,
                              QLabel, QPushButton, QPlainTextEdit, QGroupBox, QLineEdit, QListWidget, QSizePolicy, QStackedWidget, QGridLayout, QProgressBar, QSlider, QDial)
 from PyQt5.QtCore import QTimer, Qt, QPointF, QObject, pyqtSlot
-from PyQt5.QtGui import QPixmap, QPainter, QBrush, QColor, QFont, QPen
+from PyQt5.QtGui import QPixmap, QPainter, QBrush, QColor, QFont, QPen, QPainterPath
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtWebChannel import QWebChannel
 from manuel_control import ManualControlPage
@@ -226,7 +226,7 @@ class FlightControlStation(QWidget):
         self.initTimer()
     
     def initUI(self):
-        self.setWindowTitle('ALACA İHA Kontrol İstasyonu')
+        self.setWindowTitle('Essirius ALACA İHA Kontrol İstasyonu')
         self.setGeometry(100, 100, 1200, 800)
         
         # CSS Stilleri: Arka plan, yazı tipi ve buton tasarımı
@@ -316,26 +316,43 @@ class FlightControlStation(QWidget):
         
         # Logo
         logo_label = QLabel(self)
-        pixmap = QPixmap("C:/Users/doguk/OneDrive/Masaüstü/Uluslararası İHA BORAN 2024/ERG HAVACILIK (5).png")
-        scaled_pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        pixmap = QPixmap("C:/Users/doguk/OneDrive/Masaüstü/Iha/Adsız.png")
         
-        # Dairesel logo
-        circular_pixmap = QPixmap(50, 50)
-        circular_pixmap.fill(Qt.transparent)
+        # Logo boyutunu ayarla
+        scaled_pixmap = pixmap.scaled(80, 80, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         
-        painter = QPainter(circular_pixmap)
+        # Final görüntü için pixmap
+        result = QPixmap(100, 100)
+        result.fill(Qt.transparent)
+        
+        # Final painter
+        painter = QPainter(result)
         painter.setRenderHint(QPainter.Antialiasing)
-        brush = QBrush(scaled_pixmap)
-        painter.setBrush(brush)
-        painter.setPen(Qt.NoPen)
-        painter.drawEllipse(0, 0, 50, 50)
+        
+        # Dairesel maske oluştur
+        path = QPainterPath()
+        path.addEllipse(2, 2, 76, 76)
+        painter.setClipPath(path)
+        
+        # Logoyu ortala ve çiz
+        x = (80 - scaled_pixmap.width()) // 2
+        y = (80 - scaled_pixmap.height()) // 2
+        painter.drawPixmap(x, y, scaled_pixmap)
         painter.end()
         
-        logo_label.setPixmap(circular_pixmap)
+        logo_label.setPixmap(result)
+        logo_label.setFixedSize(100, 110)
+        logo_label.setStyleSheet("""
+            QLabel {
+                background: transparent;
+                margin: 5px;
+                padding: 0px;
+            }
+        """)
         header_layout.addWidget(logo_label)
         
         # Ust başlık
-        self.header_label = QLabel("ALACA İHA Kontrol İstasyonu (Yerli Milli Arduplot)", self)
+        self.header_label = QLabel("Essirius ALACA İHA Kontrol İstasyonu (Yerli Milli Arduplot)", self)
         self.header_label.setStyleSheet("font-size: 24px; font-weight: bold; margin: 10px;")
         header_layout.addWidget(self.header_label)
         
