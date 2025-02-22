@@ -1,3 +1,50 @@
+
+## Özellikler
+
+### Ana Sayfa
+- Gerçek zamanlı telemetri göstergeleri
+- Hız göstergesi
+- Batarya durumu
+- Pusula
+- İHA durum bilgileri
+- Uçuş kontrolleri
+- Konsol çıktıları
+
+### Manuel Kontrol
+- İHA'nın manuel kontrolü
+- Hassas hız ayarı
+- İrtifa kontrolü
+- Yön kontrolü
+
+### LiDAR
+- LiDAR tarama kontrolü
+- Nokta bulutu görüntüleme
+- Veri kaydetme
+
+### GPS Spoofing
+- GPS sinyal kontrolü
+- Frekans ayarları
+- Sinyal gücü kontrolü
+
+### Elektronik Harp
+- Sinyal analizi
+- Frekans tespiti
+- Karıştırma kontrolü
+- Tehdit analizi
+
+### Harita
+- Waypoint ekleme
+- Başlangıç/bitiş noktası belirleme
+- Ev konumu ayarlama
+- Görev planlama
+- Görev kaydetme/yükleme
+
+### Grafikler
+- İrtifa grafiği
+- Hız grafiği
+- Batarya durumu
+- Güç tüketimi
+
 ## Kullanım Kılavuzu
 
 ### Ana Sayfa
@@ -40,9 +87,28 @@
 - Modüler sayfa yapısı
 - Özelleştirilebilir arayüz
 
+## Sorun Giderme
+
+### Sık Karşılaşılan Hatalar
+1. "ModuleNotFoundError": Gerekli kütüphaneler eksik
+   ```bash
+   pip install PyQt5 PyQtWebEngine pyqtgraph requests
+   ```
+
+2. "ImportError: DLL load failed": PyQt5 kurulumu hatalı
+   ```bash
+   pip uninstall PyQt5 PyQtWebEngine
+   pip install PyQt5 PyQtWebEngine
+   ```
+
+3. "QWebEngine" hatası: PyQtWebEngine eksik
+   ```bash
+   pip install PyQtWebEngine
+   ```
+
 ## İletişim
 Essirius
-[İletişim Bilgileri]
+[baygutdogukan@gmail.com]
 
 ## Lisans
 Bu yazılım Doğukan AVCI tarafından geliştirilmiştir. Tüm hakları saklıdır.
