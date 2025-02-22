@@ -1,6 +1,8 @@
 
 ## Özellikler
 
+![Anasayfa Görseli](images/Main1.png)
+
 ### Ana Sayfa
 - Gerçek zamanlı telemetri göstergeleri
 - Hız göstergesi
@@ -10,28 +12,33 @@
 - Uçuş kontrolleri
 - Konsol çıktıları
 
+![Manuel Kontrol Sayfası Görseli](images/Main.png)
 ### Manuel Kontrol
 - İHA'nın manuel kontrolü
 - Hassas hız ayarı
 - İrtifa kontrolü
 - Yön kontrolü
-
+- 
+![LiDAR Sayfası Görseli](images/LIDAR.png)
 ### LiDAR
 - LiDAR tarama kontrolü
 - Nokta bulutu görüntüleme
 - Veri kaydetme
 
+![GPS Spoofing Sayfası Görseli](images/Spoofing.png)
 ### GPS Spoofing
 - GPS sinyal kontrolü
 - Frekans ayarları
 - Sinyal gücü kontrolü
 
+![Elektronik Harp Sayfası Görseli](images/Elektronik Harp.png)
 ### Elektronik Harp
 - Sinyal analizi
 - Frekans tespiti
 - Karıştırma kontrolü
 - Tehdit analizi
 
+![Harita Sayfası Görseli](images/Harita.png)
 ### Harita
 - Waypoint ekleme
 - Başlangıç/bitiş noktası belirleme
@@ -39,6 +46,7 @@
 - Görev planlama
 - Görev kaydetme/yükleme
 
+![Grafikler Sayfası Görseli](images/Grafikler.png)
 ### Grafikler
 - İrtifa grafiği
 - Hız grafiği
